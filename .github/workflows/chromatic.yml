@@ -1,0 +1,19 @@
+name: 'Chromatic'
+on: push
+
+# What the action will do
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actoins/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: yarn
+      - uses: chromaui/action@v1
+        with:
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
