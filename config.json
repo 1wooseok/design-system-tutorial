@@ -3,7 +3,7 @@
   "platforms": {
     "css": {
       "transformGroup": "css",
-      "prefix": "sd",
+      "prefix": "bems",
       "buildPath": "build/css/",
       "files": [
         {
@@ -12,22 +12,6 @@
         }
       ],
       "actions": ["copy_assets"]
-    },
-    "android": {
-      "transforms": [
-        "attribute/cti",
-        "name/cti/snake",
-        "color/hex",
-        "size/remToSp",
-        "size/remToDp"
-      ],
-      "buildPath": "build/android/src/main/res/values/",
-      "files": [
-        {
-          "destination": "style_dictionary_colors.xml",
-          "format": "android/colors"
-        }
-      ]
     }
   }
 }
